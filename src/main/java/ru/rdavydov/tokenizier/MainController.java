@@ -55,7 +55,7 @@ public class MainController {
             User user = users.get(0);
             return user.getName();
         } else {
-            return "no user";
+            return "bad credentials";
         }
     }
 }
