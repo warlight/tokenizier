@@ -1,4 +1,4 @@
-package ru.rdavydov.tokenizier.repositories;
+package ru.rdavydov.tokenizier.entities;
 
 import ru.rdavydov.tokenizier.utils.Hasher;
 

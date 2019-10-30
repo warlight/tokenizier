@@ -2,8 +2,8 @@ package ru.rdavydov.tokenizier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.rdavydov.tokenizier.entities.UsersRepository;
-import ru.rdavydov.tokenizier.repositories.User;
+import ru.rdavydov.tokenizier.repositories.UsersRepository;
+import ru.rdavydov.tokenizier.entities.User;
 import ru.rdavydov.tokenizier.utils.Hasher;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class MainController {
     }
 
     @PostMapping()
-    public String create(@RequestParam(name="name") String name, @RequestParam(name="email") String email, @RequestParam(name="password") String password) {
+    public String create(@RequestParam(name = "name") String name, @RequestParam(name = "email") String email, @RequestParam(name = "password") String password) {
         //check if there is no such user:
         List<User> checkingUser = usersRepo.findByEmail(email);
         System.out.println(checkingUser.size());
@@ -41,7 +41,7 @@ public class MainController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam(name="email") String email, @RequestParam(name="password") String password) {
+    public String login(@RequestParam(name = "email") String email, @RequestParam(name = "password") String password) {
         String passwordHash = "";
         try {
             passwordHash = Hasher.md5(password);
@@ -57,5 +57,11 @@ public class MainController {
         } else {
             return "bad credentials";
         }
+    }
+
+    @GetMapping("/get")
+    public String getUser(@RequestParam(name = "token") String token) {
+
+        return "no user";
     }
 }

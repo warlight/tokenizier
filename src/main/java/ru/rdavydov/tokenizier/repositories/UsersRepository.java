@@ -1,7 +1,7 @@
-package ru.rdavydov.tokenizier.entities;
+package ru.rdavydov.tokenizier.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.rdavydov.tokenizier.repositories.User;
+import ru.rdavydov.tokenizier.entities.User;
 
 import java.util.List;
 
