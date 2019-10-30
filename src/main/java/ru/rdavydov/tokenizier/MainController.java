@@ -53,7 +53,8 @@ public class MainController {
 
         if (users.size() > 0) {
             User user = users.get(0);
-            return user.getName();
+
+            return "ABC";
         } else {
             return "bad credentials";
         }
